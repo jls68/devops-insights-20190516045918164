@@ -15,7 +15,7 @@
 
     describe('Get Weather', function() {
 
-    	it('with valid town name', function(done) {
+    	it('with valid city name', function(done) {
         if(!appUrl) {
             assert.fail("Environment variable APP_URL is not defined");
             return done();
@@ -35,7 +35,7 @@
         });
     	});
 
-      it('without zip code', function(done) {
+      it('without city name', function(done) {
         if(!appUrl) {
             assert.fail("Environment variable APP_URL is not defined");
             return done();
