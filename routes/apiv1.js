@@ -10,12 +10,12 @@ var request = REQUEST.defaults( {
 var OPENWEATHERURL = "http://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 
 exports.getWeather = function(req, res) {
-	var town = req.query.town;
-	if( (town === null) || (typeof(town) === 'undefined') ) {
-		return res.status(400).send('town missing');
+	var city = req.query.city;
+	if( (town === null) || (typeof(city) === 'undefined') ) {
+		return res.status(400).send('city name missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&town=' + town + ',nz';
+	var aurl = OPENWEATHERURL + '&city=' + city + ',nz';
 
 	request({
 		method: 'GET',
@@ -41,12 +41,12 @@ router.get('/getWeather', exports.getWeather);
 
 
 exports.getWeather2 = function(req, res) {
-	var town = req.query.town;
-	if( (town === null) || (typeof(town) === 'undefined') ) {
-		return res.status(400).send('town missing');
+	var city = req.query.city;
+	if( (town === null) || (typeof(city) === 'undefined') ) {
+		return res.status(400).send('city name missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&town=' + town + ',nz';
+	var aurl = OPENWEATHERURL + '&city=' + city + ',nz';
 
 	request({
 		method: 'GET',
