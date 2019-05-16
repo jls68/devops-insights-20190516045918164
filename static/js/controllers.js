@@ -33,7 +33,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
         if(data.length === 5) {
             $http({
                 method: "GET",
-                url: '/api/v1/getWeather?town=' + data
+                url: '/api/v1/getWeather?q=' + data
             }).then( function(response) {
                 if(which === 1) {
                     $scope.town1City = response.data.city;
